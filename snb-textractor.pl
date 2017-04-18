@@ -5,7 +5,7 @@
 # TODO: CLI extravaganza for more convenient input/output handling
 # -- unpack the ZIP contents with 'ark'
 # -- read only the extracted file 'snote.xml'
-# -- write the text in '<s:t>...</s:t>' to 'Memo_*.txt'
+# -- write the text in '<sn:t>...</sn:t>' to 'Memo_*.txt'
 # TODO: Create output in MarkDown format for further processing
  
 use strict;
@@ -31,6 +31,7 @@ foreach my $snb ( <Memo_*.snb> ) {
   # Grab the plain text from the innermost tag
   my ($text) = $contents =~ m|<sn:t>(.*)</sn:t>|s;
 
+  # Write a simple text file
   open TNOTE, '>', "$memo.txt" or next;
   print TNOTE $text;
   close TNOTE;
