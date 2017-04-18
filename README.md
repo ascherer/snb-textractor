@@ -10,7 +10,7 @@ So I hastily whipped together this small Perl program to grab and extract the pl
 
 ## Invocation
 
-Simply in the script in a directory containing one or more `.snb` files. The resulting `.txt` files will be created next to their origin.
+Simply run in the script in a directory containing one or more `.snb` files. The resulting `.txt` files will be created next to their origin.
 
 ## Outlook
 
