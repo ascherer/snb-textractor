@@ -23,11 +23,9 @@ foreach my $snb ( <Memo_*.snb> ) {
   `ark -b -a $snb 2>&1`;
 
   # Process SNote XML contents
+  local $/ = undef;
   open SNOTE, "$memo/snote/snote.xml" or next;
-  my $contents;
-  while (<SNOTE>) {
-    $contents .= $_;
-  }
+  my $contents = <SNOTE>;
   close SNOTE;
 
   # Grab the plain text from the innermost tag
